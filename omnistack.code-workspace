@@ -1,0 +1,29 @@
+{
+	"folders": [
+		{
+			"path": "backend"
+		},
+		{
+			"path": "frontend"
+		}
+	],
+	"settings": {
+		"editor.fontFamily": "Fira Code",
+		"editor.fontLigatures": true,
+		"editor.fontSize": 18,
+		"editor.lineHeight": 24,
+		"editor.rulers": [80, 120],
+		"editor.formatOnSave": false,
+		"workbench.iconTheme": "material-icon-theme",
+		"explorer.confirmDelete": false,
+		"eslint.alwaysShowStatus": true,
+		"eslint.autoFixOnSave": true,
+		"eslint.packageManager": "yarn",
+		"eslint.run": "onSave",
+		"workbench.colorTheme": "Dracula",
+		"emmet.includeLanguages": {
+			"javascript": "javascriptreact",
+			"vue-html": "html"
+		}
+	}
+}
