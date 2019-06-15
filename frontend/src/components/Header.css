@@ -1,0 +1,19 @@
+.header{
+  background: #FFF;
+  height: 72px;
+  border-bottom: 1px solid #DDD;
+}
+
+.header__container{
+  width: 100%;
+  max-width: 980px;
+  padding: 0 20px;
+  margin: 0 auto;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
