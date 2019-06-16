@@ -9,6 +9,6 @@ module.exports = {
 
     req.io.emit('like', post);
 
-    return res.json({likes: post.likes})
-  }
-}
+    return res.json({ likes: post.likes });
+  },
+};

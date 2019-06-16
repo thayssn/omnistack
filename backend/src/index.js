@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const cors = require('cors')();
+
 const app = express();
 require('./config/database');
 
@@ -18,5 +19,6 @@ app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads', 'resiz
 app.use(require('./routes'));
 
 server.listen(3333, () => {
-    console.log('All good, sir.');
+  // eslint-disable-next-line no-console
+  console.log('All good, sir.');
 });
