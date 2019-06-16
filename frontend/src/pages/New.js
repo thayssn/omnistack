@@ -8,66 +8,82 @@ class New extends Component {
     author: '',
     place: '',
     description: '',
-    hashtags: ''
+    hashtags: '',
   };
 
-  handleSubmit = async e => {
+  handleSubmit = async (e) => {
     e.preventDefault();
 
     const data = new FormData();
 
-    data.append('image', this.state.image);
-    data.append('author', this.state.author);
-    data.append('place', this.state.place);
-    data.append('description', this.state.description);
-    data.append('hashtags', this.state.hashtags);
+    const {
+      image, author, place, description, hashtags,
+    } = this.state;
 
-    console.log(data);
+    const { history } = this.props;
+
+    data.append('image', image);
+    data.append('author', author);
+    data.append('place', place);
+    data.append('description', description);
+    data.append('hashtags', hashtags);
 
     await api.post('posts', data);
 
-    this.props.history.push('/');
-
+    history.push('/');
   }
 
-  handleFileChange = e => {
-    this.setState({ image: e.target.files[0]})
+  handleFileChange = (e) => {
+    this.setState({ image: e.target.files[0] });
   }
 
-  handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value })
+  handleChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
   }
 
   render() {
+    const {
+      author, place, description, hashtags,
+    } = this.state;
     return (
       <section className="new_post">
         <form className="form" onSubmit={this.handleSubmit}>
-          <input type="file"
-          onChange={this.handleFileChange}/>
+          <input
+            type="file"
+            onChange={this.handleFileChange}
+          />
 
-          <input type="text"
-          name="author"
-          placeholder="Author"
-          onChange={this.handleChange}
-          value={this.state.author}/>
+          <input
+            type="text"
+            name="author"
+            placeholder="Author"
+            onChange={this.handleChange}
+            value={author}
+          />
 
-          <input type="text"
-          name="place"
-          placeholder="Place"
-          onChange={this.handleChange}
-          value={this.state.place}/>
+          <input
+            type="text"
+            name="place"
+            placeholder="Place"
+            onChange={this.handleChange}
+            value={place}
+          />
 
-          <input type="text"
-          name="description"
-          placeholder="Description"
-          onChange={this.handleChange}
-          value={this.state.description}/>
+          <input
+            type="text"
+            name="description"
+            placeholder="Description"
+            onChange={this.handleChange}
+            value={description}
+          />
 
-          <input type="text"
-          name="hashtags"
-          placeholder="Hashtags"
-          onChange={this.handleChange}
-          value={this.state.hashtags}/>
+          <input
+            type="text"
+            name="hashtags"
+            placeholder="Hashtags"
+            onChange={this.handleChange}
+            value={hashtags}
+          />
 
           <button type="submit">Enviar</button>
         </form>

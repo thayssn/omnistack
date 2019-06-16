@@ -50,10 +50,8 @@
     &__action{
       height: 20px;
       margin-right: 10px;
-
-      &--like{
-        cursor: pointer;
-      }
+      background: transparent;
+      border: none;
     }
 
     &__likes{
