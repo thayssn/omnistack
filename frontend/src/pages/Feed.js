@@ -7,7 +7,8 @@ import like from '../assets/like.svg';
 import comment from '../assets/comment.svg';
 import send from '../assets/send.svg';
 
-import './Feed.scss';
+// using styled-components
+import { FeedList } from './styles/feedStyles';
 
 class Feed extends Component {
   state = {
@@ -44,7 +45,7 @@ class Feed extends Component {
   render() {
     const { posts } = this.state;
     return (
-      <section className="feed">
+      <FeedList>
         { posts.map(post => (
           <article className="post" key={post._id}>
             <header className="post__header">
@@ -82,7 +83,7 @@ likes
             </footer>
           </article>
         ))}
-      </section>
+      </FeedList>
     );
   }
 }
